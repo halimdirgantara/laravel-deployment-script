@@ -255,7 +255,7 @@ This project is open-sourced software licensed under the [MIT license](LICENSE).
 
 ## 👨‍💻 Author
 
-Your Name - [@yourhandle](https://twitter.com/yourhandle)
+Muhammad Halim Dirgantara - https://medium.com/@halimdirgantara
 
 ## ⭐ Support
 
