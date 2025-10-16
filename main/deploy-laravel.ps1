@@ -209,7 +209,8 @@ if ([string]::IsNullOrWhiteSpace($DB_USER)) {
 $DB_PASS = Read-Host "Enter database password" -AsSecureString
 $DB_PASS_Plain = [Runtime.InteropServices.Marshal]::PtrToStringAuto([Runtime.InteropServices.Marshal]::SecureStringToBSTR($DB_PASS))
 
-# Update .env file
+# Update .env file - Set MySQL as default database
+(Get-Content .env) -replace 'DB_CONNECTION=.*', "DB_CONNECTION=mysql" | Set-Content .env
 (Get-Content .env) -replace 'DB_DATABASE=.*', "DB_DATABASE=$DB_NAME" | Set-Content .env
 (Get-Content .env) -replace 'DB_USERNAME=.*', "DB_USERNAME=$DB_USER" | Set-Content .env
 (Get-Content .env) -replace 'DB_PASSWORD=.*', "DB_PASSWORD=$DB_PASS_Plain" | Set-Content .env

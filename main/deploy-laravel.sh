@@ -133,7 +133,8 @@ DB_USER=${DB_USER:-root}
 read -sp "Enter database password: " DB_PASS
 echo ""
 
-# Update .env file
+# Update .env file - Set MySQL as default database
+sed -i "s/DB_CONNECTION=.*/DB_CONNECTION=mysql/" .env
 sed -i "s/DB_DATABASE=.*/DB_DATABASE=$DB_NAME/" .env
 sed -i "s/DB_USERNAME=.*/DB_USERNAME=$DB_USER/" .env
 sed -i "s/DB_PASSWORD=.*/DB_PASSWORD=$DB_PASS/" .env
